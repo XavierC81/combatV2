@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+#erreur-form, .attaque, .perte {
+    color: red;
+}
+.gain {
+    color: green;
+}
+.mouvement {
+    color: blue;
+}
+.recap {
+    margin-bottom: 48px;
+}
+#ecran-interface div, h1 {
+    margin-bottom: 16px;
+}
+.fond-interface {
+    background-color: antiquewhite;
+    padding-bottom: 24px;
+}
+.finir {
+    font-size: 6rem;
+    color: blue;
+    text-shadow: 2px 2px 2px #262426;
+    display: inline-block;
+}
+.nom {
+    width: 100px;
+    overflow: auto;
+}
+.mort {
+    font-size: 6rem;
+    color: red;
+    text-shadow: 2px 2px 2px #262426;
+    display: inline-block;
+}
+.align-center {
+    align-content: center;
+}
+.justify-center {
+    justify-content: center;
+}
+
+.form-choix {
+    padding: 64px;
+    box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.42);
+    margin-top: 64px;
+    & a {
+        margin-right: 24px;
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
+input {
+    padding: 8px 16px;
+}
+.pseudo {
+    padding-bottom: 32px;
+    label {
+        margin-right: 24px;
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
+.points {
+margin-bottom: 24px;
+}
+
+.form {
+    padding: 64px;
+    box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.42);
+    margin-top: 64px;
+    width: 75%;
+    text-align: center;
+
+}
+
+.stats {
+    margin-bottom: 24px;
+    & label {
+        margin-right: 24px;
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
+
+select {
+    padding: 8px 16px;
+    margin-bottom: 16px;
+}
+
+.avatar, form img {
+    margin-bottom: 24px;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+.justify-between {
+    justify-content: space-between;
+}
+h1, h2, .btn, .large-20 p, .points, .avatar {
+    text-transform: uppercase;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+h1, h2 {
+    font-weight: bold;
+}
+.relative {
+    position: relative;
+}
+.joueur p, .large-20 p {
+    text-align: center;
+}
+
+#ecran-log {
+    padding-left: 24px;
+    overflow: auto;
+    height: 75vh;
+}
+
+.absolute {
+    position: absolute;
+}
+.large-75 {
+    width: 75%;
+}
+.large-100 {
+    width: 100%;
+}
+.large-25 {
+    width: 25%;
+}
+.joueur {
+    margin: 16px;
+    display: inline;
+    height: 100px;
+}
+
+.btn, .joueur {
+    cursor: pointer;
+}
+
+.joueur p {
+    background-color: #fff;
+}
+
+.btn {
+    background-color: #fff;
+    border: #000 solid 1px;
+    padding: 8px 16px;
+    &:hover {
+        color: #fff;
+        background-color: #000;
+    }
+}
+
+#ecran-jeu {
+    height: 85vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
