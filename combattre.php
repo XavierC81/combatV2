@@ -20,7 +20,6 @@ $perso = new personnage($_SESSION["id"]);
 $perso->combattre($idAdversaire);
 
 
-
-
+// test
 // Affichage
 include "templates/fragments/stats_joueur.php";
