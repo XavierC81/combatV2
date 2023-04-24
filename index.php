@@ -5,5 +5,6 @@
 // Initialisation
 include "library/init.php";
 
+// test
 // Affichage
 include "templates/pages/choix_perso.php";
