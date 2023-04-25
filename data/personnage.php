@@ -244,55 +244,6 @@ class personnage extends _model
         $log->logEsquive($perso, $this);
     }
 
-    protected function subitAttaque($id, $riposte = "")
-    {
-        // Rôle : Calcule de déroulement d'un combat
-        // Retour : néant
-        // Paramètre : 
-        //      $id : id de l'attaquant
-        $perso = new personnage($id);
-        $pertePV = 0;
-        $statut = "defaite";
-        $esquive = false;
-        $log = new log();
-        // Si l'agilité est supérieur ou égal à la force de l'adversaire +3, on esquive
-        if ($this->valeurs["agilite"] >= $perso->get("force") + 3) {
-            $this->valeurs["agilite"]--;
-            $this->logEsquive($perso);
-            if ($perso->get("force") >= 10 && $perso->get("force") < 15) {
-                $perso->set("force", ($perso->get("force") - 1));
-                $perso->set("resistance", ($perso->get("resistance") + 1));
-            }
-            $esquive = true;
-            // Si la force du joueur attaqué est supérieur à celle de l'attaquant, on lance une riposte
-        } else if ($this->valeurs["force"] > $perso->get("force")) {
-            $log->logRiposte($perso, $this);
-            $perso->subitAttaque($this->id, "riposte");
-            // Si la resistance du joueur attaqué est supérieur ou égal à la force de l'attaquant, on déclare une victoire
-        } else if ($this->valeurs["resistance"] >= $perso->get("force")) {
-            $statut = "victoire";
-            $log->logDefense($this, $perso);
-        }
-        if ($this->valeurs["resistance"] < $perso->get("force") && $esquive == false) {
-            $this->valeurs["pv"] -= $perso->get("force") - $this->valeurs["resistance"];
-            $pertePV = $perso->get("force") - $this->valeurs["resistance"];
-            $log->logDefaite($this, $perso, $pertePV);
-        }
-        if ($riposte == "riposte" && $esquive == false) {
-            if ($statut == "defaite") {
-                if ($perso->valeurs["pv"] < 100) {
-                    $perso->valeurs["pv"]++;
-                }
-            } else {
-                $perso->valeurs["pv"] -= 2;
-                $pertePVAtt = 2;
-                $log->logDefaite($perso, $this, $pertePVAtt);
-            }
-        }
-
-        $this->update();
-        $perso->update();
-    }
 
 
     protected function subitCombat($idAttaquant, $riposte = false)
